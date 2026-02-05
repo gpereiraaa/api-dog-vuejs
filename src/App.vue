@@ -1,129 +1,50 @@
-<!-- <script>
-export default {
-
-  data() {
-    return {
-      data: null,
-      raca: ''
-    }
-  },
-  methods: {
-    async fetchData() {
-      //const response = await fetch(`https://dog.ceo/api/breed/${this.raca}/images/random`)
-      const response = await fetch(`https://dog.ceo/api/breed/${this.raca}/images`)
-      console.log(response.json)
-      this.data = await response.json()
-    }
-  }
-};
-</script>
-
-<template>
-  <div class="initial">
-    <img src="./img/Api Dog.svg" alt="">
-    <h2>Digite a raça de um cachorro</h2>
-    <div>
-      <input v-model="raca" type="text" placeholder="Raça">
-      <button @click="fetchData"><font-awesome-icon icon="fa-magnifying-glass" style="color: #5a5858;" /></button>
-    </div>
-  </div>
-</template>
-<!--<font-awesome-icon icon="fa-magnifying-glass"/>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.initial {
-  gap: 15px;
-  background-color: #F5F5F5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.initial div {
-  gap: 20px;
-  display: flex;
-  background-color: #E9E9E9;
-  color: #5a5858;
-  padding: 12px;
-  border-radius: 18px;
-  justify-content: space-between;
-
-}
-
-.initial input {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.initial button {
-  background-color: transparent;
-  border: none;
-}
-</style> -->
-
-
-
-
-
 <script>
 export default {
   data() {
     return {
       raca: '',
       fotos: [],
-      loading: false
+      carregamento: false
     }
   },
   methods: {
     async fetchData() {
-      if (!this.raca) return alert("Por favor, digite uma raça!");
+      if (!this.raca) return alert("Por favor digite uma raça!")
 
-      this.loading = true;
-      this.fotos = [];
+      this.carregamento = true
+      this.fotos = []
 
       try {
-        const racaFormatada = this.raca.toLowerCase();
-        
-        const response = await fetch(`https://dog.ceo/api/breed/${racaFormatada}/images`);
+        const racaFormatada = this.raca.toLowerCase()
+        const response = await fetch(`https://dog.ceo/api/breed/${racaFormatada}/images`)
         
         if (!response.ok) {
-          throw new Error("Raça não encontrada");
+          throw new Error("Raça não encontrada")
         }
 
-        const data = await response.json();
-      
-        this.fotos = data.message; 
+        const data = await response.json()
+        this.fotos = data.message
 
       } catch (error) {
-        alert("Raça não encontrada! Tente nomes em inglês (ex: 'pug', 'labrador').");
+        alert("Raça não encontrada! Tente nomes de cachorro em inglês (ex: 'pug', 'labrador')")
       } finally {
-        this.loading = false
+        this.carregamento = false
       }
     }
   }
-};
+}
 </script>
 
 <template>
-  <div class="initial">
-    <div class="header-content">
+  <div class="principal">
+    <div class="header">
       <img src="./img/Api Dog.svg" alt="Logo" width="80">
-      <h2>Galeria de Cachorros</h2>
       
-      <div class="search-box">
+      <div class="caixa-pesquisa">
         <input 
           v-model="raca" 
           type="text" 
-          placeholder="Digite a raça (ex: husky)" 
+          placeholder="Digite uma raça em inglês (ex: pug) " 
           @keyup.enter="fetchData"
         >
         <button @click="fetchData">
@@ -131,15 +52,13 @@ export default {
         </button>
       </div>
       
-      <p v-if="loading" class="loading-msg">A buscar todas as fotos... Aguarde.</p>
+      <p v-if="carregamento" class="mensagem-carregamento">Buscando as fotos...</p>
     </div>
 
-    <div v-if="fotos.length > 0" class="gallery-container">
-      
-      <div v-for="(foto, index) in fotos" :key="index" class="photo-card">
-        <img :src="foto" loading="lazy" alt="Cachorro">
+    <div v-if="fotos.length > 0" class="container-fotos">
+      <div v-for="(foto, index) in fotos" :key="index" class="card-foto">
+        <img :src="foto" carregamento="lazy" alt="Cachorro">
       </div>
-
     </div>
   </div>
 </template>
@@ -151,7 +70,7 @@ export default {
   box-sizing: border-box;
 }
 
-.initial {
+.principal {
   background-color: #F5F5F5;
   display: flex;
   flex-direction: column;
@@ -161,16 +80,19 @@ export default {
   gap: 20px;
 }
 
-
-.header-content {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  flex-shrink: 0;
+  flex-shrink: 0; 
+}
+.header img{
+  height: 20vh;
+  width: 20vw;
 }
 
-.search-box {
+.caixa-pesquisa {
   gap: 20px;
   display: flex;
   background-color: #E9E9E9;
@@ -181,7 +103,7 @@ export default {
   width: 300px;
 }
 
-.initial input {
+.principal input {
   background-color: transparent;
   border: none;
   outline: none;
@@ -189,17 +111,18 @@ export default {
   width: 100%;
 }
 
-.initial button {
+.principal button {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-.gallery-container {
+.container-fotos {
   width: 90%;
   max-width: 1200px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   overflow-y: auto;
   padding-bottom: 20px; 
@@ -207,21 +130,27 @@ export default {
   scrollbar-color: #5a5858 #e0e0e0;
 }
 
-.photo-card img {
+.card-foto {
+  flex: 1 1 150px;
+  height: 150px;
+  max-width: 300px; 
+}
+
+.card-foto img {
   width: 100%;
-  height: 150px; 
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.2s;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.photo-card img:hover {
+.card-foto img:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
 
-.loading-msg {
+.mensagem-carregamento {
   color: #666;
   font-size: 0.9rem;
   font-style: italic;
