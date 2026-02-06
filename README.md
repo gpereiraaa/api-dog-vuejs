@@ -29,6 +29,53 @@ Ele não é indicado nos seguintes tópicos:
 * Quando a equipe não está habituada com o framework.
 
 
+## Requisitos do ambiente Vue
+
+- Biblioteca Node
+- VS Code
+- Extensão do Vue.js
+
+## Comandos de Criação
+
+### Comando de instalação do Vue
+
+```bash
+npm install -g @vue/cli
+```
+Ou
+
+```bash
+yarn global add @vue/cli
+```
+depois
+
+```bash
+vue create [Nome do projeto]
+```
+
+### Instalação via CDN
+
+Obs: Essa instalação, fica limitada a utilização de Web Components
+
+```bash 
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+```
+### Execução do Vue.js
+
+Para execurtamos localmente o vue, basta utilizarmos o comando:
+
+```bash
+npm run serve
+```
+
+Ou
+
+```bash
+npm run dev
+```
+
+Esses comandos criam um servidor local que atualiza automaticamente conforme o código é escrito.
+
 
 #### Principais componentes do Vue.js
 Na sua sintaxe, existem os três blocos principais:
@@ -40,14 +87,10 @@ Na sua sintaxe, existem os três blocos principais:
 ```
 
 
-
-
-
-
 ## Tecnologias utilizadas para criar o site
 * [Vue.js](https://pt.vuejs.org/)
 * [Dog API](https://dog.ceo/dog-api/)
 
 ## Autores
-[Gustavo Pereira](https://www.linkedin.com/in/gustavo-pereira-dev-redes)
-[Samara]() 
+* [Gustavo Pereira](https://github.com/gpereiraaa)
+* [Samara](https://github.com/Samys003) 
