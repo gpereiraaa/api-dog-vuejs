@@ -2,43 +2,41 @@
 
 
 ## Site
-É um site feito com Vue.js, em que nele o Vue consome a Dog API e exibe as fotos de cachorro de acordo com a raça que o usuário digitar.
+É um site desenvolvido com Vue.js que consome a Dog API para exibir fotos de cachorros de acordo com a raça digitada pelo usuário.
 
 ![](./src/img/fotoInicial.png)
 ![](./src/img/fotoPesquisa.png)
 
 
 ## Vue.js
-Ele é um framework JavaScript progressivo e de código aberto, ele é focado na criação de aplicações Web. Foi criado em 2014 por Evan You, ele é um framework popular por sua curva de aprendizado ser bem rapida e tranquila, sendo otima para iniciantes. Ele pode ser utilizado tanto em sistemas mais antigos quanto em sistemas mais novos.
+Ele é um framework JavaScript progressivo e de código aberto, focado na criação de aplicações web. Criado em 2014 por Evan You, o framework é popular por sua curva de aprendizado rápida e tranquila, sendo uma ótima opção para iniciantes. Ele pode ser utilizado tanto em sistemas legados quanto em projetos modernos.
 
 
 ### Por que utilizá-lo
-Os grandes motivos de utilizar o Vue são:
-* Facilidade de aprendizado
-* Componetes reativos
-* Alto desempenho
-* Flexibilidade e integração 
-* Ecossistema poderoso
-* Documentação bem explicativa
+Os principais motivos para utilizar o Vue são:
+* Facilidade de aprendizado;
+* Componentes reativos;
+* Alto desempenho;
+* Flexibilidade e integração;
+* Ecossistema poderoso;
+* Documentação bem explicativa.
 
 
 ### Em quais cenários ele não é indicado
-Ele não é indicado nos seguintes topicos
-* Aplicações simples
-* Projetos que dependam de bibliotecas terceiras
-* Quando a equipe não é abituada com o Framework
+Ele não é indicado nos seguintes tópicos:
+* Aplicações extremamente simples;
+* Projetos que dependam estritamente de bibliotecas de terceiros incompatíveis;
+* Quando a equipe não está habituada com o framework.
+
 
 
 #### Principais componentes do Vue.js
-Na sintaxe dele existem os três principais componentes que são:
+Na sua sintaxe, existem os três blocos principais:
+
 ```sh
-script
-```
-```sh
-template
-```
-```sh
-style
+<script>
+<template>
+<style>
 ```
 
 
@@ -52,4 +50,4 @@ style
 
 ## Autores
 [Gustavo Pereira](https://www.linkedin.com/in/gustavo-pereira-dev-redes)
-[Samara]()
+[Samara]() 
