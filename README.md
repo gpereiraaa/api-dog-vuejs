@@ -1,38 +1,55 @@
-# testeVue
+# Site API Dog - Vue.js
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Site
+É um site feito com Vue.js, em que nele o Vue consome a Dog API e exibe as fotos de cachorro de acordo com a raça que o usuário digitar.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+![](./src/img/fotoInicial.png)
+![](./src/img/fotoPesquisa.png)
 
-## Recommended Browser Setup
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Vue.js
+Ele é um framework JavaScript progressivo e de código aberto, ele é focado na criação de aplicações Web. Foi criado em 2014 por Evan You, ele é um framework popular por sua curva de aprendizado ser bem rapida e tranquila, sendo otima para iniciantes. Ele pode ser utilizado tanto em sistemas mais antigos quanto em sistemas mais novos.
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Por que utilizá-lo
+Os grandes motivos de utilizar o Vue são:
+* Facilidade de aprendizado
+* Componetes reativos
+* Alto desempenho
+* Flexibilidade e integração 
+* Ecossistema poderoso
+* Documentação bem explicativa
 
-## Project Setup
 
+### Em quais cenários ele não é indicado
+Ele não é indicado nos seguintes topicos
+* Aplicações simples
+* Projetos que dependam de bibliotecas terceiras
+* Quando a equipe não é abituada com o Framework
+
+
+#### Principais componentes do Vue.js
+Na sintaxe dele existem os três principais componentes que são:
 ```sh
-npm install
+script
+```
+```sh
+template
+```
+```sh
+style
 ```
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
+
+
+## Tecnologias utilizadas para criar o site
+* [Vue.js](https://pt.vuejs.org/)
+* [Dog API](https://dog.ceo/dog-api/)
+
+## Autores
+[Gustavo Pereira](https://www.linkedin.com/in/gustavo-pereira-dev-redes)
+[Samara]()
