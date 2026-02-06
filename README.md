@@ -77,7 +77,7 @@ npm run dev
 Esses comandos criam um servidor local que atualiza automaticamente conforme o código é escrito.
 
 
-#### Principais componentes do Vue.js
+### Principais componentes do Vue.js
 Na sua sintaxe, existem os três blocos principais:
 
 ```sh
